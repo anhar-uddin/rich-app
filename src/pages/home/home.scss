@@ -1,0 +1,72 @@
+page-home {
+  #bookCover {}
+  .bookTitle {
+    font-size: 1.5em;
+  }
+  ion-scroll {
+    white-space: nowrap;
+    height: 250px
+  }
+  .downloaded-books {
+    max-width: 50%;
+  }
+  .read-now-books {
+    padding: 5px;
+  }
+  .read-now-books-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 10px;
+  }
+  .book-title {
+    text-align: center;
+    margin-top: -2px;
+  }
+  .book-title-row {
+    padding-left: 5px;
+    padding-right: 5px
+  }
+  .toolbar-background-ios,
+  .toolbar-background-md {
+    //     border-color: #b2b2b2;
+    //     /* background: #f8f8f8; */
+    // /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,4c4c4c+100 */
+    // background: #000000; /* Old browsers */
+    // background: -moz-linear-gradient(-45deg, #000000 0%, #4c4c4c 100%); /* FF3.6-15 */
+    // background: -webkit-linear-gradient(-45deg, #000000 0%,#4c4c4c 100%); /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(135deg, #000000 0%,#4c4c4c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4c4c4c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    //      color: white; 
+  }
+  #downloaded-content-background {
+    background: #EFEFEF;
+    margin-top: -10px;
+    padding-bottom: 10px
+  }
+  .toolbar-title-ios,
+  .toolbar-title-md {
+    text-align: center;
+    color: #000;
+  }
+  @media screen and (min-height: 690px) and (max-height: 780px) {
+    #downloaded-content-background {
+      padding-bottom: 20px;
+    }
+    ion-scroll {
+      white-space: nowrap;
+      height: 280px;
+    }
+  }
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+  .book-template {
+    border: solid 1px;
+    min-height: 140px;
+    min-width: 30px;
+  }
+  .book-template p {
+    font-size: 5.9vw;
+  }
+}

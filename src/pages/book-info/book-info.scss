@@ -1,0 +1,75 @@
+page-book-info {
+
+   .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+    color: white;
+    background-color: transparent;
+}
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+background: transparent
+
+}
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: white;
+    background-color: transparent;
+}
+
+
+ion-navbar .toolbar-background {
+    background: transparent;
+}
+
+ion-content .scroll-content {
+    margin-top:0px !important;
+}
+
+ion-content {
+   background: #EFEFEF !important;
+}
+    #book-content-background{
+// background: #FB9C1D; /* Old browsers */
+// background: -moz-linear-gradient(-45deg, #FB9C1D 0%, #E55415 100%); /* FF3.6-15 */
+// background: -webkit-linear-gradient(-45deg, #FB9C1D 0%,#E55415 100%); /* Chrome10-25,Safari5.1-6 */
+// background: linear-gradient(135deg, #FB9C1D 0%,#E55415 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FB9C1D', endColorstr='#E55415',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,6d6d6d+100 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,4c4c4c+100 */
+background: #4A4A4A; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #4A4A4A 0%, #4c4c4c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #4A4A4A 0%,#4c4c4c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #4A4A4A 0%,#4c4c4c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4A4A4A', endColorstr='#4c4c4c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+width: 100%;
+height: 60%;
+padding-top: 20px;
+color: white;
+margin-top: -10px
+}
+
+#book-content{
+margin-top: 20px
+}
+    .book-img{
+    box-shadow: 2px 2px 13px 4px rgba(0,0,0,0.19);
+    max-width: 80%;
+    margin: 20px;
+    }
+
+    .book-title{
+  text-align: center;
+          margin-bottom: 10%;
+
+
+}
+
+.books-title-section{
+        margin-bottom: 10%;
+
+}
+
+#read-now-button{
+    margin-bottom: 10%
+}
+
+}

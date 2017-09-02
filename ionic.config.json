@@ -1,0 +1,8 @@
+{
+  "name": "rch_app_firebase",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

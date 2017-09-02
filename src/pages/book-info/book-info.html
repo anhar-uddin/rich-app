@@ -1,0 +1,40 @@
+<!--
+  Generated template for the BookInfo page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow>
+  <ion-navbar transparent>
+    <ion-title>
+      <!--Iongfgfic Blank-->
+    </ion-title>
+  </ion-navbar>
+  <!--<progress-bar-line id="pro-bar" [progress]="loadProgress"></progress-bar-line>-->
+</ion-header>
+
+
+<ion-content>
+  <div id="book-content-background" class="">
+    <div id="book-content" class="">
+      <ion-grid class="book-content">
+        <ion-row>
+          <ion-col col-6>
+            <img class="book-img" src="assets/img/2708.jpg">
+          </ion-col>
+          <ion-col col-6>
+            <div class="books-title-section">
+              <h3 class="centered-hori book-title">{{book.title}}</h3>
+              <button id="read-now-button" class="centered-hori" (click)="openBook(book)" ion-button color="light" outline>Read Now</button>
+              <button id="download-button" class="centered-hori" (click)="downloadBook(book)" ion-button color="light" outline>Download</button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <div id="book-description" class="">
+    <ion-label class="header-label">Description</ion-label>
+    <p padding>{{book.description}}</p>
+  </div>
+</ion-content>
