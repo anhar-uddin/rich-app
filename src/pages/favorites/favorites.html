@@ -1,5 +1,5 @@
 <!--
-  Generated template for the Favourites page.
+  Generated template for the Favorites page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Favourites</ion-title>
+    <ion-title>Favorites</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,11 +16,11 @@
 <ion-content padding>
   <ion-list *ngIf="favoritesList.length > 0">
     <ion-item-sliding *ngFor="let favourite of favoritesList;  let i = index">
-      <ion-item (click)="openFavourites(favourite)">
+      <ion-item (click)="openFavorites(favourite)">
         {{ favourite.title }}
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="danger" (click)="removeFavourites(favourite.id)">
+        <button ion-button color="danger" (click)="removeFavorites(favourite.id)">
                     <ion-icon name="trash"></ion-icon>
                     Remove
                 </button>
@@ -36,8 +36,8 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <h3 class="center-text">Save to favourites</h3>
-          <p class="center-text"> Press and hold on the paragraph that you want to save to favourites.</p>
+          <h3 class="center-text">Save to favorites</h3>
+          <p class="center-text"> Press and hold on the paragraph that you want to save to favorites.</p>
         </ion-col>
       </ion-row>
     </ion-grid>

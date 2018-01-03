@@ -2,13 +2,6 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { App, PopoverController, NavController, Content, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
 import { OfflineBooks } from '../../providers/offline-books';
 
-/*
-  Generated class for the OpenChapter page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-
 @Component({
   selector: 'page-open-chapter',
 
@@ -159,13 +152,10 @@ export class OpenChapterPage {
   @ViewChild(Content) pageContent: Content;
 
   constructor(private popoverCtrl: PopoverController, public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController, public offlineBooks: OfflineBooks, private alertCtrl: AlertController) {
-
     this.book = navParams.data.book;
     this.chapterIndex = navParams.data.chapterIndex;
     this.chapters = navParams.data.chapters;
     this.chapter = this.chapters[this.chapterIndex];
-    console.log("chapter", this.chapter);
-
   }
 
   presentPopover(ev) {
@@ -181,27 +171,9 @@ export class OpenChapterPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OpenChapterPage');
-    if (this.navParams.data.from === "favourites") {
-
+    if (this.navParams.data.from === "favorites") {
       this.goToFav(this.navParams.data.paragraph)
     }
-  }
-
-  saveToFav() {
-    let numffber = document.getElementById("arabicAnd complete the Hajj and 'Umrah for Allah.");
-    var position = numffber.getBoundingClientRect();
-    console.log(numffber.getBoundingClientRect());
-    this.pageContent.scrollTo(position.right, (position.top - 100));
-  }
-
-  goToFav(id) {
-    console.log(id);
-
-    let numffber = document.getElementById(id);
-    var position = numffber.getBoundingClientRect();
-    console.log(numffber.getBoundingClientRect());
-    this.pageContent.scrollTo(position.right, (position.top - 100));
   }
 
   previousChapter() {
@@ -236,14 +208,14 @@ export class OpenChapterPage {
 
   presentActionSheet(book, chapterIndex, paragraph) {
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Save to favourites',
+      title: 'Save to favorites',
       buttons: [
         {
           text: 'Save',
           role: 'save',
           handler: () => {
             console.log('Destructive clicked');
-            this.offlineBooks.storeFavourites(book, chapterIndex, paragraph).then(result => {
+            this.offlineBooks.storeFavorites(book, chapterIndex, paragraph).then(result => {
               if (result === "error") {
                 let alert = this.alertCtrl.create({
                   title: 'Error saving',
@@ -269,5 +241,21 @@ export class OpenChapterPage {
       ]
     });
     actionSheet.present();
+  }
+
+  // TODO: Save paragraph to favorite 
+  saveToFav() {
+    let number = document.getElementById("arabicAnd complete the Hajj and 'Umrah for Allah.");
+    var position = number.getBoundingClientRect();
+    console.log(number.getBoundingClientRect());
+    this.pageContent.scrollTo(position.right, (position.top - 100));
+  }
+
+  // TODO: Got to favorite paragraph 
+  goToFav(id) {
+    let number = document.getElementById(id);
+    var position = number.getBoundingClientRect();
+    console.log(number.getBoundingClientRect());
+    this.pageContent.scrollTo(position.right, (position.top - 100));
   }
 }

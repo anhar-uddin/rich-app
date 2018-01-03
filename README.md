@@ -8,7 +8,7 @@ Instructions for different platforms are shown on the nodejs.org website.
 
 #### Global Node Packages
 
-The development environment requires Ionic2 and Cordova to be installed as global node packages. You can check what is installed using -
+The development environment requires Ionic 3 and Cordova to be installed as global node packages. You can check what is installed using -
 
 ```
 $ npm list -g --depth=0

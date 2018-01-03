@@ -4,17 +4,6 @@
       RCH Books
     </ion-title>
   </ion-navbar>
-
-  <!--<ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="booksSegments">
-      <ion-segment-button value="online">
-        Online Books
-      </ion-segment-button>
-      <ion-segment-button value="offline">
-        Downloaded Books
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>-->
 </ion-header>
 
 <ion-content class="about">
@@ -32,9 +21,6 @@
   <div class="read-now-books-section">
     <div tappable (click)="openBookInfo(book)" *ngFor="let book of booksList" style="flex: 0 0 calc( 100% / 3 );">
       <img class="read-now-books" src="assets/img/2708.jpg">
-      <!--<div class="read-now-books book-template">
-        <p> eifjekwuhfku uhejfgew4jghjw4eg fhjg </p>
-      </div>-->
       <ion-row class="centered-hori book-title-row">
         <p class="book-title"> {{ book.title }}</p>
       </ion-row>

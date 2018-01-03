@@ -3,12 +3,6 @@ import { Http } from '@angular/http';
 import PouchDB from 'pouchdb';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the OfflineBooks provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class OfflineBooks {
 
@@ -137,7 +131,7 @@ export class OfflineBooks {
     });
   }
 
-  storeFavourites(book, chapterId, paragraph) {
+  storeFavorites(book, chapterId, paragraph) {
     return new Promise(resolve => {
 
       this.db.post({
@@ -158,7 +152,7 @@ export class OfflineBooks {
     })
   }
 
-  getOfflineFavourites() {
+  getOfflineFavorites() {
     return new Promise(resolve => {
       //returns all docs
       this.db.allDocs({
@@ -189,7 +183,7 @@ export class OfflineBooks {
     });
   }
 
-  removeFavourites(favoriteId) {
+  removeFavorites(favoriteId) {
     return new Promise(resolve => {
       this.db.get(favoriteId).then((doc) => {
         return this.db.remove(doc);

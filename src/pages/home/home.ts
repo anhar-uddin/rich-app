@@ -12,38 +12,29 @@ import { BookInfoPage } from '../../pages/book-info/book-info';
 export class HomePage {
   books: FirebaseListObservable<any>;
   booksList = [];
-  offlineBooksList:any = [];
+  offlineBooksList: any = [];
   booksSegments: string = "online";
-  items: any;
 
   constructor(public navCtrl: NavController, public af: AngularFire, public offlineBooks: OfflineBooks) {
     this.books = af.database.list('/books');
     this.getAllBooks();
-    this.items = new Array(7)
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.offlineBooksList = [];
-
-        this.getOfflineBooks();
-
+    this.getOfflineBooks();
   }
 
-  addToDoc() {
-    this.books.push({
-      title: "new"
-    });
-  }
-
+  // Get all books from firebase
   getAllBooks() {
     this.books.subscribe(items => {
       for (let book of items) {
-        // console.log(book); // 1, "string", false
         this.booksList.push({ bookID: book.$key, title: book.title, description: book.description, chapters: book.chapters })
       }
     });
   }
 
+  // Get all books stored offline 
   getOfflineBooks() {
     this.offlineBooks.getOfflineBooks().then((data) => {
       console.log("offline books", data);
@@ -54,6 +45,24 @@ export class HomePage {
     });
   }
 
+  // Open book and display on chapters page
+  openBook(book) {
+    this.navCtrl.push(ChaptersPage, { book: book });
+  }
+
+  // Download book and save to offline storage
+  downloadBook(book) {
+    this.offlineBooks.storeLocalBooks(book.bookID, book.chapters, book.description, book.title);
+    this.offlineBooksList = [];
+    this.getOfflineBooks();
+  }
+
+  // Open book information
+  openBookInfo(book) {
+    this.navCtrl.push(BookInfoPage, { book: book });
+  }
+
+  // TODO : Will be used in the future for sorting books 
   getBookByTitle() {
     this.books = this.af.database.list('/books', {
       query: {
@@ -61,12 +70,11 @@ export class HomePage {
         equalTo: "new"
       }
     });
-
     this.books.subscribe(items =>
-      // items is an array
       console.log(items));
   }
 
+  // TODO : Will be used in the future for sorting books 
   getLastBook() {
     this.books = this.af.database.list('/books', {
       query: {
@@ -78,23 +86,4 @@ export class HomePage {
       // items is an array
       console.log(items));
   }
-
-  openBook(book) {
-
-    this.navCtrl.push(ChaptersPage, { book: book });
-
-  }
-
-  downloadBook(book) {
-    this.offlineBooks.storeLocalBooks(book.bookID, book.chapters, book.description, book.title);
-    this.offlineBooksList = [];
-    this.getOfflineBooks();
-  }
-
-  openBookInfo(book) {
-    this.navCtrl.push(BookInfoPage, { book: book });
-    console.log("kjkljkhjjkhh");
-
-  }
-
 }

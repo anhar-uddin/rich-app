@@ -1,8 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AngularFireModule } from 'angularfire2';
@@ -10,7 +8,7 @@ import { OfflineBooks } from '../providers/offline-books';
 import { ChaptersPage } from '../pages/chapters/chapters';
 import { OpenChapterPage } from '../pages/open-chapter/open-chapter';
 import { PopoverPage } from '../pages/open-chapter/open-chapter';
-import { FavouritesPage } from '../pages/favourites/favourites';
+import { FavoritesPage } from '../pages/favorites/favorites';
 import { BookInfoPage } from '../pages/book-info/book-info';
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
 
@@ -27,14 +25,12 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     ChaptersPage,
     OpenChapterPage,
     PopoverPage,
-    FavouritesPage,
+    FavoritesPage,
     BookInfoPage,
     ParallaxHeader
   ],
@@ -46,14 +42,12 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     ChaptersPage,
     OpenChapterPage,
     PopoverPage,
-    FavouritesPage,
+    FavoritesPage,
     BookInfoPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, OfflineBooks]
